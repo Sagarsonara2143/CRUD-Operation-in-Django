@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CRUD Operations</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+
+<h1 align="center">CRUD Operation</h1>
+<form name='add', method="POST", action="{% url 'update' %}">
+	{% csrf_token %}
+	<table border="2" align="center">
+		
+		<tr>
+			<td> Roll Number </td>
+			<td><input type="Number" name="roll_no" class="form-control">{{roll_no.roll_no}}</td>
+		</tr>
+
+		<tr>
+			<td> First Name </td>
+			<td><input type="text" name="f_name" class="form-control">{{roll_no.f_name}}</td>
+		</tr>
+
+		<tr>
+			<td> Last Name </td>
+			<td><input type="text" name="l_name" class="form-control">{{roll_no.l_name}}</td>
+		</tr>
+
+		<tr>
+			<td> Percentage </td>
+			<td><input type="Number" name="percentage" class="form-control">{{roll_no.percentage}}</td>
+		</tr>
+		
+	</table>
+	<div class="text-center">
+	<input type="submit" name="SUBMIT" class="btn btn-primary" align="center">
+	</div>
+	
+</form>
+
+</body>
+</html>
