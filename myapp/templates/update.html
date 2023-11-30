@@ -15,13 +15,14 @@
 <body>
 
 <h1 align="center">CRUD Operation</h1>
-<form name='add', method="POST", action="{% url 'update' %}">
+<form name='delete', method="POST", action="{% url 'update' pk=roll_no.pk %}">
 	{% csrf_token %}
 	<table border="2" align="center">
 		
 		<tr>
 			<td> Roll Number </td>
-			<td><input type="Number" name="roll_no" class="form-control">{{roll_no.roll_no}}</td>
+			<td><input type="Number" name="roll_no" class="form-control" value="{{ roll_no.roll_no }}" readonly></td>
+			<!-- <td><input type="Number" name="roll_no" class="form-control">{{roll_no.roll_no}}</td> -->
 		</tr>
 
 		<tr>
